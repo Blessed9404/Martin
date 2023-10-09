@@ -2,22 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package za.ac.cput.loginform;
+package ac.za.cput.mycityprotectss;
 
 /**
  *
- * @author Mngomezulu kgotlelelo Allet
+ * @author Olebaka
  */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    public static Connection getConnection() throws SQLException {
-        String url = "jdbc:derby://localhost:1527/Login";
-        String user = "User1";
-        String password = "Allet247";
+    private static final String url = "jdbc:derby://localhost:1527/CityProtect";
+    private static final String user = "adminstrator";
+    private static final String password = "password";
 
-        return DriverManager.getConnection(url, user, password);
+    public static Connection getConnection() throws SQLException {
+        Connection con = DriverManager.getConnection(url, user, password);
+        return con;
     }
 }
